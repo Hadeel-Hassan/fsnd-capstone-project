@@ -24,6 +24,8 @@ You also need to download and install PostgreSQL from https://www.postgresql.org
 ## Endpoints & Permissions
 
 Allowed endpoints are as follow:
+
+```python
 - GET `/menu` 
     - to get the menu that contains a list of drinks, donuts and combos.
 - GET `/combo`
@@ -38,8 +40,9 @@ Allowed endpoints are as follow:
     - to update a specific combo.
 - DELETE `/combo/<int:combo_id>`
     - to delete a specific combo.
+```
 
-This application have two roles set to its users: `Barista` and `Manager`.<br> 
+This application have two roles set to its users: **Barista** and **Manager**.<br> 
 Barista have the following permissions:
 
 - `get:menu`
