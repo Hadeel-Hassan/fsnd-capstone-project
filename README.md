@@ -1,16 +1,12 @@
 
 # Udacity Coffe Shop
 
-## Introduction:
+## Introduction
 
 This project was intended for the Full-Stack Developer Nanodegree program from Udacity. Udacity Coffee Shop is cafe system designed for its employees. It enables the baristas and managers to view the whole menu of the coffee shop, and allow the managers to set updates to the menu. The menu contains list of drinks, list of donuts, and list of combos, which is some drink and donut combo deals for the customers.
 
-# Working App:
 
-To view a production app, it can be accessed from https://capstone-turki.herokuapp.com/
-Currently there is no front end so far. But it can be utilized through API endpoints mentioned in this readme file.
-
-## Dependencies:
+## Dependencies
 [![Python Versions](https://img.shields.io/pypi/pyversions/yt2mp3.svg)](https://pypi.python.org/pypi/yt2mp3/)
 [![Flask Versions](https://img.shields.io/badge/flask->=_1.0.3-blue)](https://pypi.org/project/Flask/)
 [![Flask-SQLAlchemy Versions](https://img.shields.io/badge/Flask_SQLAlchemy->=_2.4.0-blue)](https://pypi.org/project/Flask-SQLAlchemy/) 
@@ -25,9 +21,41 @@ This will install all of the required packages we selected within the `requireme
 
 You also need to download and install PostgreSQL from https://www.postgresql.org/ 
 
+## Endpoints & Permissions
 
-## Local Running:
-To run this project locally, you need to set the value of **ENV** to `"dev"` in the follwing files:
+Allowed endpoints are as follow:
+- GET `/menu` 
+    - to get the menu that contains a list of drinks, donuts and combos.
+- GET `/combo`
+    - to get the list of combos.
+- POST `/drink`
+    - to add a new drink to the menu.
+- POST `/donut`
+    - to add a new donut to the menu.
+- POST `/combo`
+    - to add a new combo to the menu.
+- PATCH `/combo/<int:combo_id>`
+    - to update a specific combo.
+- DELETE `/combo/<int:combo_id>`
+    - to delete a specific combo.
+
+This application have two roles set to its users: `Barista` and `Manager`.<br> 
+Barista have the following permissions:
+
+- `get:menu`
+- `get:combo`
+
+While the manager have the following permissions:
+- `get:menu`
+- `get:combo`
+- `post:drink`
+- `post:donut`
+- `post:combo`
+- `patch:combo`
+- `delete:combo`
+
+## Local Running
+To run this project locally, you need to make sure that the value of **ENV** is equal to `"dev"` in the following files:
 1. `./auth.py` 
 2. `./models.py`
 3. `./auth/auth.py`
@@ -55,16 +83,11 @@ To run a unit testing using `unittest`, simply run:
 python3 test_app.py
 ```
 
-## Production Running:
+## Production Running
 
-To run this project production mode, you need to set the enviroment variable to production by changing the value of **ENV** to `"prod"` in the follwing files:
-1. `./auth.py` 
-2. `./models.py`
-3. `./auth/auth.py`
+This application is hosted in `heroku`, you can visit it by clicking [here](https://fsnd-capstone-hadeel.herokuapp.com/). Then follow these steps to interact with its endpoints: 
 
-#### Steps:
-
-1. You need to have a `Github` account.
+1. Log in as 
 2. Create an account in Heroku.com.
 3. Install Heroku CLI (https://devcenter.heroku.com/articles/heroku-cli)
 5.	In the command line type: 
