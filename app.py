@@ -108,7 +108,7 @@ def create_app(test_config=None):
                 'status': 200,
                 'success': True,
             })
-        except:
+        except Exception:
             abort(422)
     
     @app.route('/donut', methods=['POST'])
@@ -125,7 +125,7 @@ def create_app(test_config=None):
                 'status': 200,
                 'success': True,
             })
-        except:
+        except Exception:
             abort(422)
     
     
@@ -144,7 +144,7 @@ def create_app(test_config=None):
                 'status': 200,
                 'success': True,
             })
-        except:
+        except Exception:
             abort(422)
 
 
@@ -167,7 +167,7 @@ def create_app(test_config=None):
                 'status': 200,
                 'success': True
             })
-        except:
+        except Exception:
             abort(422)
 
     @app.route('/combo/<int:combo_id>', methods=['DELETE'])
@@ -184,7 +184,7 @@ def create_app(test_config=None):
                 'status': 200,
                 'success': True,
             })
-        except:
+        except Exception:
             abort(422)
 
     '''
